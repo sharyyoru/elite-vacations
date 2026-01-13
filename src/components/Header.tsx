@@ -18,15 +18,15 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 glass-effect border-b border-elite-border">
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
+        <div className="flex h-24 items-center justify-between">
           <div className="flex items-center gap-8">
             <Link href="/" className="flex items-center">
               <Image
                 src="/logo/elite-vacations.png"
                 alt="Elite Vacations"
-                width={140}
-                height={50}
-                className="h-10 sm:h-12 w-auto"
+                width={560}
+                height={200}
+                className="h-16 sm:h-20 w-auto"
                 priority
               />
             </Link>

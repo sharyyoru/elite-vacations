@@ -41,9 +41,9 @@ export default function Footer() {
               <Image
                 src="/logo/elite-vacations.png"
                 alt="Elite Vacations"
-                width={160}
-                height={60}
-                className="h-12 sm:h-14 w-auto"
+                width={640}
+                height={240}
+                className="h-20 sm:h-24 w-auto"
               />
             </Link>
             <p className="text-gray-400 mb-6 max-w-sm">
