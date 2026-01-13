@@ -2,10 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap');
+@font-face {
+  font-family: 'AktivGrotesk';
+  src: url('/fonts/AktivGrotesk-Regular.woff2') format('woff2'),
+       url('/fonts/AktivGrotesk-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AktivGrotesk';
+  src: url('/fonts/AktivGrotesk-Medium.woff2') format('woff2'),
+       url('/fonts/AktivGrotesk-Medium.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AktivGrotesk';
+  src: url('/fonts/AktivGrotesk-Bold.woff2') format('woff2'),
+       url('/fonts/AktivGrotesk-Bold.woff') format('woff');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 :root {
-  --font-inter: 'Inter', system-ui, sans-serif;
+  --font-aktiv: 'AktivGrotesk', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-playfair: 'Playfair Display', Georgia, serif;
 }
 
@@ -19,7 +46,7 @@ html,
 body {
   max-width: 100vw;
   overflow-x: hidden;
-  font-family: var(--font-inter);
+  font-family: var(--font-aktiv);
 }
 
 body {

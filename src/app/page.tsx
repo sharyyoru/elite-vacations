@@ -4,8 +4,19 @@ import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PropertyCard from '@/components/PropertyCard'
 import SearchBar from '@/components/SearchBar'
-import { properties, areas } from '@/lib/data'
+import { properties } from '@/lib/data'
 import { Crown, Shield, Sparkles, Clock, MapPin, Star, ArrowRight } from 'lucide-react'
+
+const neighborhoodImages = [
+  { name: 'Palm Jumeirah', image: 'https://images.unsplash.com/photo-1512453979798-5ea266f8880c?w=800&q=80' },
+  { name: 'Downtown', image: 'https://images.unsplash.com/photo-1546412414-e1885259563a?w=800&q=80' },
+  { name: 'Dubai Marina', image: 'https://images.unsplash.com/photo-1518684079-3c830dcef090?w=800&q=80' },
+  { name: 'Emirates Hills', image: 'https://images.unsplash.com/photo-1582672060674-bc2bd808a8b5?w=800&q=80' },
+  { name: 'JBR', image: 'https://images.unsplash.com/photo-1580674684081-7617fbf3d745?w=800&q=80' },
+  { name: 'City Walk', image: 'https://images.unsplash.com/photo-1597659840241-37e2b9c2f55f?w=800&q=80' },
+  { name: 'Business Bay', image: 'https://images.unsplash.com/photo-1512632578888-169bbbc64f33?w=800&q=80' },
+  { name: 'DIFC', image: 'https://images.unsplash.com/photo-1624173711020-be57c18f4c3c?w=800&q=80' },
+]
 
 const features = [
   {
@@ -137,23 +148,23 @@ export default function Home() {
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {areas.slice(0, 8).map((area, index) => (
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4">
+            {neighborhoodImages.map((neighborhood) => (
               <Link
-                key={area}
-                href={`/properties?area=${encodeURIComponent(area)}`}
-                className="group relative h-48 rounded-2xl overflow-hidden"
+                key={neighborhood.name}
+                href={`/properties?area=${encodeURIComponent(neighborhood.name)}`}
+                className="group relative h-40 sm:h-48 rounded-xl sm:rounded-2xl overflow-hidden"
               >
                 <Image
-                  src={`https://images.unsplash.com/photo-${1512453979798 + index * 1000}-5ea266f8880c?w=400`}
-                  alt={area}
+                  src={neighborhood.image}
+                  alt={neighborhood.name}
                   fill
                   className="object-cover transition-transform duration-500 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute bottom-4 left-4">
-                  <h3 className="text-lg font-semibold text-white group-hover:text-elite-gold transition-colors">
-                    {area}
+                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4">
+                  <h3 className="text-sm sm:text-lg font-semibold text-white group-hover:text-elite-gold transition-colors">
+                    {neighborhood.name}
                   </h3>
                 </div>
               </Link>

@@ -20,17 +20,15 @@ export default function Header() {
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-20 items-center justify-between">
           <div className="flex items-center gap-8">
-            <Link href="/" className="flex items-center gap-3">
+            <Link href="/" className="flex items-center">
               <Image
                 src="/logo/elite-vacations.png"
                 alt="Elite Vacations"
-                width={50}
+                width={140}
                 height={50}
-                className="h-12 w-auto"
+                className="h-10 sm:h-12 w-auto"
+                priority
               />
-              <span className="hidden sm:block text-xl font-semibold text-white">
-                Elite Vacations
-              </span>
             </Link>
           </div>
 
