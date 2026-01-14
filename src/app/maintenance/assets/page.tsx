@@ -34,8 +34,8 @@ export default function AssetsPage() {
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
             <div className="elite-card">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-elite-green/20 rounded-xl">
-                  <Package className="h-6 w-6 text-elite-green" />
+                <div className="p-3 bg-elite-gold/20 rounded-xl">
+                  <Package className="h-6 w-6 text-elite-gold" />
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-white">{assets.length}</p>

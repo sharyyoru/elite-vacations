@@ -55,7 +55,7 @@ export default function InspectionsPage() {
                     onClick={() => setInspectionType('pre-checkin')}
                     className={`p-3 rounded-xl text-sm font-medium transition-colors ${
                       inspectionType === 'pre-checkin'
-                        ? 'bg-elite-green text-black'
+                        ? 'bg-elite-gold text-black'
                         : 'bg-elite-darker text-gray-400 hover:text-white'
                     }`}
                   >
@@ -65,7 +65,7 @@ export default function InspectionsPage() {
                     onClick={() => setInspectionType('post-checkout')}
                     className={`p-3 rounded-xl text-sm font-medium transition-colors ${
                       inspectionType === 'post-checkout'
-                        ? 'bg-elite-green text-black'
+                        ? 'bg-elite-gold text-black'
                         : 'bg-elite-darker text-gray-400 hover:text-white'
                     }`}
                   >
@@ -83,7 +83,7 @@ export default function InspectionsPage() {
                   </div>
                   <div className="h-3 bg-elite-darker rounded-full overflow-hidden">
                     <div 
-                      className="h-full bg-elite-green rounded-full transition-all"
+                      className="h-full bg-elite-gold rounded-full transition-all"
                       style={{ width: `${progress}%` }}
                     />
                   </div>
@@ -102,7 +102,7 @@ export default function InspectionsPage() {
             <div className="lg:col-span-2 elite-card">
               <div className="flex items-center justify-between mb-6">
                 <h2 className="text-xl font-semibold text-white flex items-center gap-2">
-                  <ClipboardCheck className="h-5 w-5 text-elite-green" />
+                  <ClipboardCheck className="h-5 w-5 text-elite-gold" />
                   Inspection Checklist
                 </h2>
                 <button className="elite-button-secondary text-sm flex items-center gap-2">
@@ -114,7 +114,7 @@ export default function InspectionsPage() {
               <div className="space-y-6">
                 {categories.map((category) => (
                   <div key={category}>
-                    <h3 className="text-sm font-medium text-elite-green uppercase tracking-wider mb-3">
+                    <h3 className="text-sm font-medium text-elite-gold uppercase tracking-wider mb-3">
                       {category}
                     </h3>
                     <div className="space-y-2">

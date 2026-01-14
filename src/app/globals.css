@@ -47,29 +47,29 @@ body {
 }
 
 body {
-  background: #ffffff;
-  color: #1a1a1a;
+  background: #050508;
+  color: #f4f4f5;
 }
 
 @layer components {
   .elite-card {
-    @apply bg-elite-card border border-elite-border rounded-2xl p-6 transition-all duration-300 hover:border-elite-green/30;
+    @apply bg-elite-card border border-elite-border rounded-2xl p-6 transition-all duration-300 hover:border-elite-gold/30;
   }
 
   .elite-button {
-    @apply px-6 py-3 bg-elite-green text-black font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-elite-green/40 hover:scale-105;
+    @apply px-6 py-3 bg-gradient-to-r from-elite-gold to-yellow-600 text-black font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-elite-gold/20 hover:scale-105;
   }
 
   .elite-button-secondary {
-    @apply px-6 py-3 bg-elite-card border border-elite-border text-gray-800 font-medium rounded-xl transition-all duration-300 hover:border-elite-green/50;
+    @apply px-6 py-3 bg-elite-card border border-elite-border text-white font-medium rounded-xl transition-all duration-300 hover:border-elite-gold/50;
   }
 
   .elite-input {
-    @apply w-full px-4 py-3 bg-white border border-elite-border rounded-xl text-gray-900 placeholder:text-gray-400 focus:outline-none focus:border-elite-green/50 transition-colors;
+    @apply w-full px-4 py-3 bg-elite-card border border-elite-border rounded-xl text-white placeholder:text-gray-500 focus:outline-none focus:border-elite-gold/50 transition-colors;
   }
 
   .elite-gradient-text {
-    @apply bg-gradient-to-r from-elite-green via-lime-400 to-elite-green bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-elite-gold via-yellow-500 to-elite-gold bg-clip-text text-transparent;
   }
 
   .elite-section {
@@ -77,7 +77,7 @@ body {
   }
 
   .glass-effect {
-    @apply backdrop-blur-md bg-white/90;
+    @apply backdrop-blur-md bg-black/40;
   }
 }
 
@@ -87,14 +87,14 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f5f5f5;
+  background: #0a0a0f;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d4d4d4;
+  background: #27272a;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #a3a3a3;
+  background: #3f3f46;
 }

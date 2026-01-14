@@ -29,8 +29,8 @@ export default function OwnerPortalPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             <div className="elite-card">
               <div className="flex items-center justify-between mb-4">
-                <div className="p-3 bg-elite-green/10 rounded-xl">
-                  <DollarSign className="h-6 w-6 text-elite-green" />
+                <div className="p-3 bg-elite-gold/10 rounded-xl">
+                  <DollarSign className="h-6 w-6 text-elite-gold" />
                 </div>
                 <div className="flex items-center gap-1 text-sm text-green-400">
                   <ArrowUpRight className="h-4 w-4" />
@@ -84,7 +84,7 @@ export default function OwnerPortalPage() {
                 {ownerStats.monthlyData.map((data) => (
                   <div key={data.month} className="flex-1 flex flex-col items-center">
                     <div 
-                      className="w-full bg-gradient-to-t from-elite-green to-yellow-500 rounded-t-lg transition-all hover:from-elite-green/80"
+                      className="w-full bg-gradient-to-t from-elite-gold to-yellow-500 rounded-t-lg transition-all hover:from-elite-gold/80"
                       style={{ height: `${(data.earnings / 100000) * 100}%` }}
                     />
                     <p className="text-sm text-gray-400 mt-2">{data.month}</p>
@@ -109,7 +109,7 @@ export default function OwnerPortalPage() {
                       </div>
                       <div className="h-2 bg-elite-darker rounded-full overflow-hidden">
                         <div 
-                          className="h-full bg-elite-green rounded-full transition-all"
+                          className="h-full bg-elite-gold rounded-full transition-all"
                           style={{ width: `${percentage}%` }}
                         />
                       </div>
@@ -132,14 +132,14 @@ export default function OwnerPortalPage() {
           <div className="elite-card">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-semibold text-white">Recent Statements</h2>
-              <a href="/owner/reports" className="text-sm text-elite-green hover:underline">View All</a>
+              <a href="/owner/reports" className="text-sm text-elite-gold hover:underline">View All</a>
             </div>
             <div className="space-y-4">
               {['December 2024', 'November 2024', 'October 2024'].map((month, index) => (
                 <div key={month} className="flex items-center justify-between p-4 bg-elite-darker rounded-xl">
                   <div className="flex items-center gap-4">
-                    <div className="p-2 bg-elite-green/10 rounded-lg">
-                      <FileText className="h-5 w-5 text-elite-green" />
+                    <div className="p-2 bg-elite-gold/10 rounded-lg">
+                      <FileText className="h-5 w-5 text-elite-gold" />
                     </div>
                     <div>
                       <p className="font-medium text-white">{month} Statement</p>

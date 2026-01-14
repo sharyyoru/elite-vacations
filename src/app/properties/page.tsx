@@ -39,7 +39,7 @@ export default function PropertiesPage() {
               <button
                 onClick={() => setViewMode('grid')}
                 className={`p-2 rounded-lg transition-colors ${
-                  viewMode === 'grid' ? 'bg-elite-green text-black' : 'bg-elite-card text-gray-400 hover:text-white'
+                  viewMode === 'grid' ? 'bg-elite-gold text-black' : 'bg-elite-card text-gray-400 hover:text-white'
                 }`}
               >
                 <Grid3X3 className="h-5 w-5" />
@@ -47,7 +47,7 @@ export default function PropertiesPage() {
               <button
                 onClick={() => setViewMode('list')}
                 className={`p-2 rounded-lg transition-colors ${
-                  viewMode === 'list' ? 'bg-elite-green text-black' : 'bg-elite-card text-gray-400 hover:text-white'
+                  viewMode === 'list' ? 'bg-elite-gold text-black' : 'bg-elite-card text-gray-400 hover:text-white'
                 }`}
               >
                 <List className="h-5 w-5" />

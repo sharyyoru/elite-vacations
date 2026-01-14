@@ -34,7 +34,7 @@ export default function AdminPricingPage() {
         <div className="lg:col-span-2 space-y-6">
           <div className="elite-card">
             <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-              <DollarSign className="h-5 w-5 text-elite-green" />
+              <DollarSign className="h-5 w-5 text-elite-gold" />
               Base Pricing by Property
             </h2>
             <div className="space-y-4">
@@ -71,7 +71,7 @@ export default function AdminPricingPage() {
           <div className="elite-card">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-semibold text-white flex items-center gap-2">
-                <Calendar className="h-5 w-5 text-elite-green" />
+                <Calendar className="h-5 w-5 text-elite-gold" />
                 Seasonal Rates
               </h2>
               <button className="elite-button-secondary text-sm flex items-center gap-2">
@@ -109,7 +109,7 @@ export default function AdminPricingPage() {
           <div className="elite-card">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-semibold text-white flex items-center gap-2">
-                <AlertCircle className="h-5 w-5 text-elite-green" />
+                <AlertCircle className="h-5 w-5 text-elite-gold" />
                 Special Events (Premium Pricing)
               </h2>
               <button className="elite-button-secondary text-sm flex items-center gap-2">
@@ -119,7 +119,7 @@ export default function AdminPricingPage() {
             </div>
             <div className="space-y-4">
               {specialEvents.map((event) => (
-                <div key={event.id} className="flex items-center justify-between p-4 bg-elite-darker rounded-xl border border-elite-green/20">
+                <div key={event.id} className="flex items-center justify-between p-4 bg-elite-darker rounded-xl border border-elite-gold/20">
                   <div>
                     <p className="font-medium text-white">{event.name}</p>
                     <p className="text-sm text-gray-400">{event.startDate} - {event.endDate}</p>
@@ -146,7 +146,7 @@ export default function AdminPricingPage() {
         <div className="space-y-6">
           <div className="elite-card">
             <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-              <Percent className="h-5 w-5 text-elite-green" />
+              <Percent className="h-5 w-5 text-elite-gold" />
               Quick Settings
             </h2>
             
@@ -225,8 +225,8 @@ export default function AdminPricingPage() {
             Save All Changes
           </button>
 
-          <div className="p-4 bg-elite-green/10 border border-elite-green/30 rounded-xl">
-            <p className="text-sm text-elite-green">
+          <div className="p-4 bg-elite-gold/10 border border-elite-gold/30 rounded-xl">
+            <p className="text-sm text-elite-gold">
               <strong>Tip:</strong> Pricing changes will apply to new bookings only. Existing confirmed bookings will retain their original rates.
             </p>
           </div>

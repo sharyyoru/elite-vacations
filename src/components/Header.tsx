@@ -37,7 +37,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="text-gray-700 hover:text-black transition-colors text-sm font-medium"
+                className="text-gray-300 hover:text-white transition-colors text-sm font-medium"
               >
                 {item.name}
               </Link>
@@ -45,15 +45,15 @@ export default function Header() {
           </div>
 
           <div className="flex items-center gap-4">
-            <button className="p-2 text-gray-600 hover:text-black transition-colors">
+            <button className="p-2 text-gray-400 hover:text-white transition-colors">
               <Search className="h-5 w-5" />
             </button>
-            <button className="p-2 text-gray-600 hover:text-black transition-colors">
+            <button className="p-2 text-gray-400 hover:text-white transition-colors">
               <Globe className="h-5 w-5" />
             </button>
             <Link
               href="/admin"
-              className="hidden sm:flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-700 hover:text-black transition-colors"
+              className="hidden sm:flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white transition-colors"
             >
               <User className="h-4 w-4" />
               Portal
@@ -65,7 +65,7 @@ export default function Header() {
               Book Now
             </Link>
             <button
-              className="lg:hidden p-2 text-gray-600"
+              className="lg:hidden p-2 text-gray-400"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
               {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -79,7 +79,7 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className="block py-3 text-gray-700 hover:text-black transition-colors"
+                className="block py-3 text-gray-300 hover:text-white transition-colors"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {item.name}
@@ -87,7 +87,7 @@ export default function Header() {
             ))}
             <Link
               href="/admin"
-              className="block py-3 text-gray-700 hover:text-black transition-colors"
+              className="block py-3 text-gray-300 hover:text-white transition-colors"
               onClick={() => setMobileMenuOpen(false)}
             >
               Admin Portal

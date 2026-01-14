@@ -43,12 +43,12 @@ export default function SEOManagerPage() {
                 onClick={() => setSelectedProperty(property)}
                 className={`w-full text-left p-3 rounded-xl transition-colors ${
                   selectedProperty.id === property.id
-                    ? 'bg-elite-green/20 border border-elite-green/50'
+                    ? 'bg-elite-gold/20 border border-elite-gold/50'
                     : 'bg-elite-darker hover:bg-elite-card'
                 }`}
               >
                 <p className={`font-medium ${
-                  selectedProperty.id === property.id ? 'text-elite-green' : 'text-white'
+                  selectedProperty.id === property.id ? 'text-elite-gold' : 'text-white'
                 }`}>
                   {property.title}
                 </p>
@@ -63,7 +63,7 @@ export default function SEOManagerPage() {
           <div className="elite-card">
             <div className="flex items-center justify-between mb-6">
               <h2 className="text-xl font-semibold text-white flex items-center gap-2">
-                <Sparkles className="h-5 w-5 text-elite-green" />
+                <Sparkles className="h-5 w-5 text-elite-gold" />
                 AI-Generated Meta Tags
               </h2>
               <button 
@@ -131,7 +131,7 @@ export default function SEOManagerPage() {
           {/* Google Preview */}
           <div className="elite-card">
             <h2 className="text-xl font-semibold text-white mb-6 flex items-center gap-2">
-              <Eye className="h-5 w-5 text-elite-green" />
+              <Eye className="h-5 w-5 text-elite-gold" />
               Google Search Preview
             </h2>
             <div className="p-4 bg-white rounded-xl">
@@ -148,7 +148,7 @@ export default function SEOManagerPage() {
           </div>
 
           {/* Bulk Actions */}
-          <div className="elite-card bg-gradient-to-r from-elite-green/10 to-transparent border-elite-green/30">
+          <div className="elite-card bg-gradient-to-r from-elite-gold/10 to-transparent border-elite-gold/30">
             <div className="flex items-center justify-between">
               <div>
                 <h3 className="font-semibold text-white">Bulk Generate All Properties</h3>

@@ -63,9 +63,9 @@ export default function Home() {
         </div>
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-elite-green/20 border border-elite-green/30 rounded-full mb-8">
-            <Crown className="h-4 w-4 text-elite-green" />
-            <span className="text-sm font-medium text-elite-green">Luxury Holiday Homes in Dubai</span>
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-elite-gold/20 border border-elite-gold/30 rounded-full mb-8">
+            <Crown className="h-4 w-4 text-elite-gold" />
+            <span className="text-sm font-medium text-elite-gold">Luxury Holiday Homes in Dubai</span>
           </div>
 
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-display font-bold text-white mb-6">
@@ -94,8 +94,8 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {features.map((feature) => (
               <div key={feature.title} className="text-center">
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-elite-green/10 border border-elite-green/20 mb-6">
-                  <feature.icon className="h-8 w-8 text-elite-green" />
+                <div className="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-elite-gold/10 border border-elite-gold/20 mb-6">
+                  <feature.icon className="h-8 w-8 text-elite-gold" />
                 </div>
                 <h3 className="text-lg font-semibold text-white mb-2">{feature.title}</h3>
                 <p className="text-gray-400">{feature.description}</p>
@@ -111,8 +111,8 @@ export default function Home() {
           <div className="flex items-center justify-between mb-12">
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <Crown className="h-5 w-5 text-elite-green" />
-                <span className="text-sm font-medium text-elite-green uppercase tracking-wider">Elite Collection</span>
+                <Crown className="h-5 w-5 text-elite-gold" />
+                <span className="text-sm font-medium text-elite-gold uppercase tracking-wider">Elite Collection</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-white">
                 Premium Properties
@@ -140,8 +140,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <div className="flex items-center justify-center gap-2 mb-2">
-              <MapPin className="h-5 w-5 text-elite-green" />
-              <span className="text-sm font-medium text-elite-green uppercase tracking-wider">Explore Dubai</span>
+              <MapPin className="h-5 w-5 text-elite-gold" />
+              <span className="text-sm font-medium text-elite-gold uppercase tracking-wider">Explore Dubai</span>
             </div>
             <h2 className="text-3xl md:text-4xl font-display font-bold text-white">
               Popular Neighborhoods
@@ -163,7 +163,7 @@ export default function Home() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
                 <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4">
-                  <h3 className="text-sm sm:text-lg font-semibold text-white group-hover:text-elite-green transition-colors">
+                  <h3 className="text-sm sm:text-lg font-semibold text-white group-hover:text-elite-gold transition-colors">
                     {neighborhood.name}
                   </h3>
                 </div>
@@ -179,8 +179,8 @@ export default function Home() {
           <div className="flex items-center justify-between mb-12">
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <Star className="h-5 w-5 text-elite-green" />
-                <span className="text-sm font-medium text-elite-green uppercase tracking-wider">Featured</span>
+                <Star className="h-5 w-5 text-elite-gold" />
+                <span className="text-sm font-medium text-elite-gold uppercase tracking-wider">Featured</span>
               </div>
               <h2 className="text-3xl md:text-4xl font-display font-bold text-white">
                 Popular Properties
@@ -202,7 +202,7 @@ export default function Home() {
       {/* CTA Section */}
       <section className="elite-section bg-gradient-to-br from-elite-card to-elite-darker">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="elite-card bg-gradient-to-r from-elite-green/10 to-transparent border-elite-green/30 text-center py-16">
+          <div className="elite-card bg-gradient-to-r from-elite-gold/10 to-transparent border-elite-gold/30 text-center py-16">
             <h2 className="text-3xl md:text-4xl font-display font-bold text-white mb-4">
               List Your Property With Us
             </h2>

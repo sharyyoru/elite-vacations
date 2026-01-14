@@ -89,7 +89,7 @@ export default function AdminPropertiesPage() {
                       <div className="flex items-center gap-2">
                         <p className="font-medium text-white">{property.title}</p>
                         {property.isElite && (
-                          <Crown className="h-4 w-4 text-elite-green" />
+                          <Crown className="h-4 w-4 text-elite-gold" />
                         )}
                       </div>
                       <p className="text-sm text-gray-500">{property.bedrooms} bed • {property.bathrooms} bath</p>
