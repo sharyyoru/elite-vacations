@@ -52,8 +52,8 @@ export default function AdminDashboard() {
         {stats.map((stat) => (
           <div key={stat.name} className="elite-card">
             <div className="flex items-center justify-between mb-4">
-              <div className="p-3 bg-elite-gold/10 rounded-xl">
-                <stat.icon className="h-6 w-6 text-elite-gold" />
+              <div className="p-3 bg-elite-green/10 rounded-xl">
+                <stat.icon className="h-6 w-6 text-elite-green" />
               </div>
               <div className={`flex items-center gap-1 text-sm ${
                 stat.trend === 'up' ? 'text-green-400' : 'text-red-400'
@@ -77,7 +77,7 @@ export default function AdminDashboard() {
         <div className="elite-card">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-semibold text-white">Recent Bookings</h2>
-            <a href="/admin/bookings" className="text-sm text-elite-gold hover:underline">View All</a>
+            <a href="/admin/bookings" className="text-sm text-elite-green hover:underline">View All</a>
           </div>
           <div className="space-y-4">
             {bookings.slice(0, 5).map((booking) => (
@@ -105,7 +105,7 @@ export default function AdminDashboard() {
         <div className="elite-card">
           <div className="flex items-center justify-between mb-6">
             <h2 className="text-xl font-semibold text-white">Maintenance</h2>
-            <a href="/admin/maintenance" className="text-sm text-elite-gold hover:underline">View All</a>
+            <a href="/admin/maintenance" className="text-sm text-elite-green hover:underline">View All</a>
           </div>
           
           <div className="grid grid-cols-3 gap-4 mb-6">
@@ -158,20 +158,20 @@ export default function AdminDashboard() {
       <div className="elite-card">
         <h2 className="text-xl font-semibold text-white mb-6">Quick Actions</h2>
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-          <a href="/admin/properties" className="p-4 bg-elite-darker rounded-xl hover:bg-elite-gold/10 transition-colors text-center">
-            <Building2 className="h-8 w-8 text-elite-gold mx-auto mb-2" />
+          <a href="/admin/properties" className="p-4 bg-elite-darker rounded-xl hover:bg-elite-green/10 transition-colors text-center">
+            <Building2 className="h-8 w-8 text-elite-green mx-auto mb-2" />
             <p className="text-sm text-white">Add Property</p>
           </a>
-          <a href="/admin/bookings" className="p-4 bg-elite-darker rounded-xl hover:bg-elite-gold/10 transition-colors text-center">
-            <Calendar className="h-8 w-8 text-elite-gold mx-auto mb-2" />
+          <a href="/admin/bookings" className="p-4 bg-elite-darker rounded-xl hover:bg-elite-green/10 transition-colors text-center">
+            <Calendar className="h-8 w-8 text-elite-green mx-auto mb-2" />
             <p className="text-sm text-white">Manage Calendar</p>
           </a>
-          <a href="/admin/pricing" className="p-4 bg-elite-darker rounded-xl hover:bg-elite-gold/10 transition-colors text-center">
-            <DollarSign className="h-8 w-8 text-elite-gold mx-auto mb-2" />
+          <a href="/admin/pricing" className="p-4 bg-elite-darker rounded-xl hover:bg-elite-green/10 transition-colors text-center">
+            <DollarSign className="h-8 w-8 text-elite-green mx-auto mb-2" />
             <p className="text-sm text-white">Update Pricing</p>
           </a>
-          <a href="/admin/maintenance" className="p-4 bg-elite-darker rounded-xl hover:bg-elite-gold/10 transition-colors text-center">
-            <Users className="h-8 w-8 text-elite-gold mx-auto mb-2" />
+          <a href="/admin/maintenance" className="p-4 bg-elite-darker rounded-xl hover:bg-elite-green/10 transition-colors text-center">
+            <Users className="h-8 w-8 text-elite-green mx-auto mb-2" />
             <p className="text-sm text-white">Assign Tasks</p>
           </a>
         </div>

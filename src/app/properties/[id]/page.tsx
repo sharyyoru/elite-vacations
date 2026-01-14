@@ -77,7 +77,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                 key={index}
                 onClick={() => setCurrentImage(index)}
                 className={`w-2 h-2 rounded-full transition-all ${
-                  index === currentImage ? 'w-8 bg-elite-gold' : 'bg-white/50'
+                  index === currentImage ? 'w-8 bg-elite-green' : 'bg-white/50'
                 }`}
               />
             ))}
@@ -93,7 +93,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
           </div>
 
           {property.isElite && (
-            <div className="absolute top-4 left-4 flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-elite-gold to-yellow-600 rounded-full">
+            <div className="absolute top-4 left-4 flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-elite-green to-yellow-600 rounded-full">
               <Crown className="h-4 w-4 text-black" />
               <span className="text-sm font-semibold text-black">Elite Property</span>
             </div>
@@ -115,7 +115,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                       <span>{property.location}</span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-1 px-3 py-1.5 bg-elite-gold/10 rounded-lg">
+                  <div className="flex items-center gap-1 px-3 py-1.5 bg-elite-green/10 rounded-lg">
                     <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
                     <span className="font-semibold text-white">{property.rating}</span>
                     <span className="text-gray-400">({property.reviews} reviews)</span>
@@ -124,22 +124,22 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
 
                 <div className="grid grid-cols-4 gap-4 p-4 bg-elite-darker rounded-xl mb-6">
                   <div className="text-center">
-                    <Bed className="h-5 w-5 text-elite-gold mx-auto mb-1" />
+                    <Bed className="h-5 w-5 text-elite-green mx-auto mb-1" />
                     <p className="text-white font-medium">{property.bedrooms}</p>
                     <p className="text-xs text-gray-500">Bedrooms</p>
                   </div>
                   <div className="text-center">
-                    <Bath className="h-5 w-5 text-elite-gold mx-auto mb-1" />
+                    <Bath className="h-5 w-5 text-elite-green mx-auto mb-1" />
                     <p className="text-white font-medium">{property.bathrooms}</p>
                     <p className="text-xs text-gray-500">Bathrooms</p>
                   </div>
                   <div className="text-center">
-                    <Users className="h-5 w-5 text-elite-gold mx-auto mb-1" />
+                    <Users className="h-5 w-5 text-elite-green mx-auto mb-1" />
                     <p className="text-white font-medium">{property.guests}</p>
                     <p className="text-xs text-gray-500">Guests</p>
                   </div>
                   <div className="text-center">
-                    <Maximize className="h-5 w-5 text-elite-gold mx-auto mb-1" />
+                    <Maximize className="h-5 w-5 text-elite-green mx-auto mb-1" />
                     <p className="text-white font-medium">{property.sqft.toLocaleString()}</p>
                     <p className="text-xs text-gray-500">Sq. Ft.</p>
                   </div>
@@ -156,7 +156,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                     const Icon = amenityIcons[amenity] || amenityIcons['default']
                     return (
                       <div key={amenity} className="flex items-center gap-3 p-3 bg-elite-darker rounded-lg">
-                        <Icon className="h-5 w-5 text-elite-gold" />
+                        <Icon className="h-5 w-5 text-elite-green" />
                         <span className="text-gray-300">{amenity}</span>
                       </div>
                     )
@@ -168,7 +168,7 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                 <h3 className="text-xl font-semibold text-white mb-6">Location</h3>
                 <div className="h-64 bg-elite-darker rounded-xl flex items-center justify-center">
                   <div className="text-center">
-                    <MapPin className="h-12 w-12 text-elite-gold mx-auto mb-3" />
+                    <MapPin className="h-12 w-12 text-elite-green mx-auto mb-3" />
                     <p className="text-gray-400">Interactive map integration</p>
                     <p className="text-sm text-gray-500">{property.location}</p>
                   </div>

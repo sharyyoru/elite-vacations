@@ -45,7 +45,7 @@ export default function SearchBar({ onSearch, compact = false }: SearchBarProps)
           <input
             type="text"
             placeholder="Search destinations..."
-            className="bg-transparent text-white placeholder:text-gray-500 focus:outline-none flex-1"
+            className="bg-transparent text-gray-900 placeholder:text-gray-400 focus:outline-none flex-1"
             value={filters.location}
             onChange={(e) => setFilters({ ...filters, location: e.target.value })}
           />
@@ -123,7 +123,7 @@ export default function SearchBar({ onSearch, compact = false }: SearchBarProps)
       <div className="flex items-center justify-between mt-6 pt-4 border-t border-elite-border">
         <button
           onClick={() => setShowFilters(!showFilters)}
-          className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+          className="flex items-center gap-2 text-gray-600 hover:text-black transition-colors"
         >
           <SlidersHorizontal className="h-4 w-4" />
           <span className="text-sm font-medium">More Filters</span>
@@ -174,7 +174,7 @@ export default function SearchBar({ onSearch, compact = false }: SearchBarProps)
                 checked={filters.isElite}
                 onChange={(e) => setFilters({ ...filters, isElite: e.target.checked })}
               />
-              <span className="text-white">Show Elite Collection</span>
+              <span className="text-gray-800">Show Elite Collection</span>
             </label>
           </div>
         </div>

@@ -52,15 +52,15 @@ export default function Footer() {
             </p>
             <div className="space-y-3">
               <div className="flex items-center gap-3 text-gray-400">
-                <MapPin className="h-5 w-5 text-elite-gold" />
+                <MapPin className="h-5 w-5 text-elite-green" />
                 <span>Downtown Dubai, UAE</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
-                <Phone className="h-5 w-5 text-elite-gold" />
+                <Phone className="h-5 w-5 text-elite-green" />
                 <span>+971 4 123 4567</span>
               </div>
               <div className="flex items-center gap-3 text-gray-400">
-                <Mail className="h-5 w-5 text-elite-gold" />
+                <Mail className="h-5 w-5 text-elite-green" />
                 <span>hello@elitevacations.ae</span>
               </div>
             </div>

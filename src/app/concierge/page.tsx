@@ -23,9 +23,9 @@ export default function ConciergePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Hero Section */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-elite-gold/20 border border-elite-gold/30 rounded-full mb-6">
-              <Crown className="h-4 w-4 text-elite-gold" />
-              <span className="text-sm font-medium text-elite-gold">Virtual Concierge</span>
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-elite-green/20 border border-elite-green/30 rounded-full mb-6">
+              <Crown className="h-4 w-4 text-elite-green" />
+              <span className="text-sm font-medium text-elite-green">Virtual Concierge</span>
             </div>
             <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
               Elevate Your{' '}
@@ -42,9 +42,9 @@ export default function ConciergePage() {
             {conciergeServices.map((service) => {
               const Icon = iconMap[service.icon] || Sparkles
               return (
-                <div key={service.id} className="elite-card group hover:border-elite-gold/50 transition-all">
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-elite-gold/10 border border-elite-gold/20 mb-6 group-hover:bg-elite-gold/20 transition-colors">
-                    <Icon className="h-7 w-7 text-elite-gold" />
+                <div key={service.id} className="elite-card group hover:border-elite-green/50 transition-all">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-elite-green/10 border border-elite-green/20 mb-6 group-hover:bg-elite-green/20 transition-colors">
+                    <Icon className="h-7 w-7 text-elite-green" />
                   </div>
                   <h3 className="text-xl font-semibold text-white mb-2">{service.name}</h3>
                   <p className="text-gray-400 mb-4">{service.description}</p>
@@ -62,7 +62,7 @@ export default function ConciergePage() {
           </div>
 
           {/* Premium Services */}
-          <div className="elite-card bg-gradient-to-r from-elite-gold/10 to-transparent border-elite-gold/30">
+          <div className="elite-card bg-gradient-to-r from-elite-green/10 to-transparent border-elite-green/30">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h2 className="text-3xl font-display font-bold text-white mb-4">
@@ -83,7 +83,7 @@ export default function ConciergePage() {
                     'Childcare services',
                   ].map((item) => (
                     <li key={item} className="flex items-center gap-3 text-gray-300">
-                      <div className="w-1.5 h-1.5 rounded-full bg-elite-gold" />
+                      <div className="w-1.5 h-1.5 rounded-full bg-elite-green" />
                       {item}
                     </li>
                   ))}
@@ -93,9 +93,9 @@ export default function ConciergePage() {
                 </Link>
               </div>
               <div className="relative h-80 rounded-2xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-elite-gold/20 to-purple-600/20" />
+                <div className="absolute inset-0 bg-gradient-to-br from-elite-green/20 to-purple-600/20" />
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <Crown className="h-24 w-24 text-elite-gold/30" />
+                  <Crown className="h-24 w-24 text-elite-green/30" />
                 </div>
               </div>
             </div>

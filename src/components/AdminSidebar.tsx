@@ -87,7 +87,7 @@ export default function AdminSidebar({ collapsed = false, onToggle }: AdminSideb
                 className={cn(
                   "flex items-center gap-3 mx-2 px-3 py-2.5 rounded-lg transition-colors",
                   isActive
-                    ? "bg-elite-gold/10 text-elite-gold"
+                    ? "bg-elite-green/10 text-elite-green"
                     : "text-gray-400 hover:text-white hover:bg-white/5"
                 )}
               >
@@ -109,7 +109,7 @@ export default function AdminSidebar({ collapsed = false, onToggle }: AdminSideb
                 className={cn(
                   "flex items-center gap-3 mx-2 px-3 py-2.5 rounded-lg transition-colors",
                   isActive
-                    ? "bg-elite-gold/10 text-elite-gold"
+                    ? "bg-elite-green/10 text-elite-green"
                     : "text-gray-400 hover:text-white hover:bg-white/5"
                 )}
               >
@@ -131,7 +131,7 @@ export default function AdminSidebar({ collapsed = false, onToggle }: AdminSideb
                 className={cn(
                   "flex items-center gap-3 mx-2 px-3 py-2.5 rounded-lg transition-colors",
                   isActive
-                    ? "bg-elite-gold/10 text-elite-gold"
+                    ? "bg-elite-green/10 text-elite-green"
                     : "text-gray-400 hover:text-white hover:bg-white/5"
                 )}
               >

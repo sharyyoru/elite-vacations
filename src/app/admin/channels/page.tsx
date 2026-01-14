@@ -27,11 +27,11 @@ export default function ChannelManagerPage() {
       </div>
 
       {/* XML Feed */}
-      <div className="elite-card bg-gradient-to-r from-elite-gold/10 to-transparent border-elite-gold/30">
+      <div className="elite-card bg-gradient-to-r from-elite-green/10 to-transparent border-elite-green/30">
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-4">
-            <div className="p-3 bg-elite-gold/20 rounded-xl">
-              <Rss className="h-6 w-6 text-elite-gold" />
+            <div className="p-3 bg-elite-green/20 rounded-xl">
+              <Rss className="h-6 w-6 text-elite-green" />
             </div>
             <div>
               <h2 className="text-lg font-semibold text-white">XML Property Feed</h2>

@@ -84,8 +84,8 @@ export default function SmartLocksPage() {
             </div>
             <div className="elite-card">
               <div className="flex items-center gap-4">
-                <div className="p-3 bg-elite-gold/20 rounded-xl">
-                  <Check className="h-6 w-6 text-elite-gold" />
+                <div className="p-3 bg-elite-green/20 rounded-xl">
+                  <Check className="h-6 w-6 text-elite-green" />
                 </div>
                 <div>
                   <p className="text-2xl font-bold text-white">{properties.length}</p>
@@ -117,7 +117,7 @@ export default function SmartLocksPage() {
                       <td className="py-4 px-4 text-gray-300">{code.guest}</td>
                       <td className="py-4 px-4">
                         <div className="flex items-center gap-2">
-                          <code className="px-3 py-1 bg-elite-darker rounded-lg text-elite-gold font-mono text-lg">
+                          <code className="px-3 py-1 bg-elite-darker rounded-lg text-elite-green font-mono text-lg">
                             {code.code}
                           </code>
                           <button className="p-1 text-gray-400 hover:text-white">
@@ -186,7 +186,7 @@ export default function SmartLocksPage() {
                   </div>
                   <div className="p-4 bg-elite-darker rounded-xl text-center">
                     <p className="text-sm text-gray-400 mb-2">Generated Code</p>
-                    <code className="text-3xl font-mono text-elite-gold">{generateCode()}</code>
+                    <code className="text-3xl font-mono text-elite-green">{generateCode()}</code>
                   </div>
                 </div>
                 <div className="p-6 border-t border-elite-border flex justify-end gap-4">

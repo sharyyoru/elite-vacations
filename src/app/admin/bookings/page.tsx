@@ -42,7 +42,7 @@ export default function AdminBookingsPage() {
             <button
               onClick={() => setView('calendar')}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                view === 'calendar' ? 'bg-elite-gold text-black' : 'text-gray-400 hover:text-white'
+                view === 'calendar' ? 'bg-elite-green text-black' : 'text-gray-400 hover:text-white'
               }`}
             >
               Calendar
@@ -50,7 +50,7 @@ export default function AdminBookingsPage() {
             <button
               onClick={() => setView('list')}
               className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                view === 'list' ? 'bg-elite-gold text-black' : 'text-gray-400 hover:text-white'
+                view === 'list' ? 'bg-elite-green text-black' : 'text-gray-400 hover:text-white'
               }`}
             >
               List
@@ -99,11 +99,11 @@ export default function AdminBookingsPage() {
                 <div 
                   key={day} 
                   className={`bg-elite-darker h-24 p-2 hover:bg-elite-card/50 cursor-pointer transition-colors ${
-                    hasBooking ? 'bg-elite-gold/5' : ''
+                    hasBooking ? 'bg-elite-green/5' : ''
                   }`}
                 >
                   <span className={`text-sm ${
-                    hasBooking ? 'text-elite-gold font-medium' : 'text-gray-400'
+                    hasBooking ? 'text-elite-green font-medium' : 'text-gray-400'
                   }`}>
                     {day}
                   </span>
@@ -133,7 +133,7 @@ export default function AdminBookingsPage() {
               <span className="text-sm text-gray-400">Check-out</span>
             </div>
             <div className="flex items-center gap-2">
-              <div className="w-3 h-3 rounded-full bg-elite-gold" />
+              <div className="w-3 h-3 rounded-full bg-elite-green" />
               <span className="text-sm text-gray-400">Occupied</span>
             </div>
             <div className="flex items-center gap-2">

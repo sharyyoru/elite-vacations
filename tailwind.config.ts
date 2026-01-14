@@ -34,13 +34,13 @@ const config: Config = {
           900: '#f4f4f5',
         },
         elite: {
-          gold: '#c9a962',
+          green: '#BFFF00',
           purple: '#8b5cf6',
           blue: '#3b82f6',
-          dark: '#0a0a0f',
-          darker: '#050508',
-          card: '#12121a',
-          border: '#1e1e2e',
+          dark: '#f8f8f8',
+          darker: '#ffffff',
+          card: '#f5f5f5',
+          border: '#e5e5e5',
         }
       },
       fontFamily: {
@@ -51,7 +51,7 @@ const config: Config = {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'elite-gradient': 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-        'gold-gradient': 'linear-gradient(135deg, #c9a962 0%, #d4af37 50%, #c9a962 100%)',
+        'green-gradient': 'linear-gradient(135deg, #BFFF00 0%, #9ACD32 50%, #BFFF00 100%)',
       },
       animation: {
         'fade-in': 'fadeIn 0.5s ease-in-out',

@@ -62,9 +62,9 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                     <div
                       className={`w-8 h-8 rounded-full flex items-center justify-center font-semibold ${
                         step > index + 1
-                          ? 'bg-elite-gold text-black'
+                          ? 'bg-elite-green text-black'
                           : step === index + 1
-                          ? 'bg-elite-gold/20 text-elite-gold border border-elite-gold'
+                          ? 'bg-elite-green/20 text-elite-green border border-elite-green'
                           : 'bg-elite-card text-gray-500'
                       }`}
                     >
@@ -130,21 +130,21 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                           onClick={() => toggleService(service.id)}
                           className={`p-4 rounded-xl border text-left transition-all ${
                             isSelected
-                              ? 'border-elite-gold bg-elite-gold/10'
-                              : 'border-elite-border bg-elite-darker hover:border-elite-gold/50'
+                              ? 'border-elite-green bg-elite-green/10'
+                              : 'border-elite-border bg-elite-darker hover:border-elite-green/50'
                           }`}
                         >
                           <div className="flex items-start gap-3">
-                            <div className={`p-2 rounded-lg ${isSelected ? 'bg-elite-gold/20' : 'bg-elite-card'}`}>
-                              <Icon className={`h-5 w-5 ${isSelected ? 'text-elite-gold' : 'text-gray-400'}`} />
+                            <div className={`p-2 rounded-lg ${isSelected ? 'bg-elite-green/20' : 'bg-elite-card'}`}>
+                              <Icon className={`h-5 w-5 ${isSelected ? 'text-elite-green' : 'text-gray-400'}`} />
                             </div>
                             <div className="flex-1">
                               <h3 className="font-medium text-white">{service.name}</h3>
                               <p className="text-sm text-gray-500 mb-2">{service.description}</p>
-                              <p className="text-elite-gold font-semibold">{formatCurrency(service.price)}</p>
+                              <p className="text-elite-green font-semibold">{formatCurrency(service.price)}</p>
                             </div>
                             {isSelected && (
-                              <Check className="h-5 w-5 text-elite-gold" />
+                              <Check className="h-5 w-5 text-elite-green" />
                             )}
                           </div>
                         </button>
@@ -178,12 +178,12 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                         onClick={() => setPaymentMethod(method.id)}
                         className={`p-4 rounded-xl border text-center transition-all ${
                           paymentMethod === method.id
-                            ? 'border-elite-gold bg-elite-gold/10'
-                            : 'border-elite-border bg-elite-darker hover:border-elite-gold/50'
+                            ? 'border-elite-green bg-elite-green/10'
+                            : 'border-elite-border bg-elite-darker hover:border-elite-green/50'
                         }`}
                       >
                         <method.icon className={`h-6 w-6 mx-auto mb-2 ${
-                          paymentMethod === method.id ? 'text-elite-gold' : 'text-gray-400'
+                          paymentMethod === method.id ? 'text-elite-green' : 'text-gray-400'
                         }`} />
                         <span className={paymentMethod === method.id ? 'text-white' : 'text-gray-400'}>
                           {method.label}
@@ -212,7 +212,7 @@ export default function BookingPage({ params }: { params: { id: string } }) {
                   )}
 
                   <div className="flex items-center gap-3 p-4 bg-elite-darker rounded-xl">
-                    <Shield className="h-5 w-5 text-elite-gold" />
+                    <Shield className="h-5 w-5 text-elite-green" />
                     <p className="text-sm text-gray-400">
                       Your payment is secured with 256-bit SSL encryption
                     </p>
@@ -247,11 +247,11 @@ export default function BookingPage({ params }: { params: { id: string } }) {
 
                 <div className="flex items-center gap-4 p-3 bg-elite-darker rounded-xl mb-4">
                   <div className="flex items-center gap-2">
-                    <Calendar className="h-4 w-4 text-elite-gold" />
+                    <Calendar className="h-4 w-4 text-elite-green" />
                     <span className="text-sm text-gray-300">Jan 15 - Jan 22</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <Users className="h-4 w-4 text-elite-gold" />
+                    <Users className="h-4 w-4 text-elite-green" />
                     <span className="text-sm text-gray-300">2 Guests</span>
                   </div>
                 </div>

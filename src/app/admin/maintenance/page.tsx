@@ -100,7 +100,7 @@ export default function AdminMaintenancePage() {
               <button
                 onClick={() => setFilter('all')}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
-                  filter === 'all' ? 'bg-elite-gold text-black' : 'text-gray-400 hover:text-white'
+                  filter === 'all' ? 'bg-elite-green text-black' : 'text-gray-400 hover:text-white'
                 }`}
               >
                 All
@@ -187,8 +187,8 @@ export default function AdminMaintenancePage() {
             {teamMembers.map((member) => (
               <div key={member.id} className="flex items-center justify-between p-3 bg-elite-darker rounded-xl">
                 <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-elite-gold/20 flex items-center justify-center">
-                    <span className="text-elite-gold font-medium">
+                  <div className="w-10 h-10 rounded-full bg-elite-green/20 flex items-center justify-center">
+                    <span className="text-elite-green font-medium">
                       {member.name.split(' ').map(n => n[0]).join('')}
                     </span>
                   </div>
