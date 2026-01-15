@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import PageHeader from '@/components/PageHeader'
+import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PropertyCard from '@/components/PropertyCard'
 import SearchBar from '@/components/SearchBar'
@@ -14,12 +14,9 @@ export default function PropertiesPage() {
 
   return (
     <main className="min-h-screen bg-white">
-      <PageHeader 
-        title="DUBAI HOLIDAY HOMES" 
-        subtitle={`Discover ${filteredProperties.length} premium vacation rentals`}
-      />
+      <Header variant="solid" />
 
-      <div className="py-8 md:py-12 bg-gray-50">
+      <div className="pt-24 pb-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <SearchBar />

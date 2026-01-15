@@ -1,4 +1,4 @@
-import PageHeader from '@/components/PageHeader'
+import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { conciergeServices } from '@/lib/data'
 import { formatCurrency } from '@/lib/utils'
@@ -17,9 +17,9 @@ const iconMap: { [key: string]: any } = {
 export default function ConciergePage() {
   return (
     <main className="min-h-screen bg-white">
-      <PageHeader title="CONCIERGE SERVICES" subtitle="Elevate your Dubai experience" />
+      <Header variant="solid" />
 
-      <div className="py-12 md:py-16">
+      <div className="pt-24 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Intro Section */}
           <div className="text-center mb-12">

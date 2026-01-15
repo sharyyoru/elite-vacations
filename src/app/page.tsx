@@ -31,12 +31,12 @@ export default function Home() {
         <div className="absolute top-20 md:top-24 left-4 md:left-8 lg:left-12 w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-lime rounded-full z-10" />
         <div className="absolute top-32 md:top-36 left-2 md:left-4 lg:left-6 w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 bg-lime rounded-full z-10" />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24 flex flex-col items-center text-center">
           <h1 className="text-[3.5rem] sm:text-7xl md:text-8xl lg:text-9xl font-display font-bold text-white mb-8 md:mb-12 tracking-tight leading-[0.9]">
             EXPERIENCE <span className="text-white/90">DUBAI</span>
           </h1>
 
-          {/* Search Form - Left aligned like title */}
+          {/* Search Form - Centered */}
           <div className="w-full max-w-3xl">
             <SearchBar />
           </div>

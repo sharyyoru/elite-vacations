@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import PageHeader from '@/components/PageHeader'
+import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { properties, conciergeServices } from '@/lib/data'
 import { formatCurrency } from '@/lib/utils'
@@ -45,9 +45,9 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
 
   return (
     <main className="min-h-screen bg-white">
-      <PageHeader title={property.title} subtitle={property.location} />
+      <Header variant="solid" />
 
-      <div className="pb-16">
+      <div className="pt-20 pb-16">
         {/* Image Gallery */}
         <div className="relative h-[50vh] md:h-[60vh] bg-gray-100">
           <Image

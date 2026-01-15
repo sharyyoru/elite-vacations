@@ -1,8 +1,9 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState, useEffect } from 'react'
-import { Menu, X, Building2 } from 'lucide-react'
+import { Menu, X } from 'lucide-react'
 
 const navigation = [
   { name: 'Home', href: '/' },
@@ -13,7 +14,11 @@ const navigation = [
   { name: 'Contact', href: '/contact' },
 ]
 
-export default function Header() {
+interface HeaderProps {
+  variant?: 'transparent' | 'solid'
+}
+
+export default function Header({ variant = 'transparent' }: HeaderProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
 
@@ -25,32 +30,29 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  const isSolid = variant === 'solid' || isScrolled
+
   return (
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled 
-          ? 'bg-white/95 backdrop-blur-md shadow-sm' 
+        isSolid 
+          ? 'bg-white shadow-sm' 
           : 'bg-transparent'
       }`}
     >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 md:h-20 items-center justify-between">
           <div className="flex items-center gap-2">
-            <Link href="/" className="flex items-center gap-2">
-              <div className="flex flex-col items-center">
-                <Building2 
-                  className={`h-8 w-8 md:h-10 md:w-10 transition-colors duration-300 ${
-                    isScrolled ? 'text-gray-900' : 'text-white'
-                  }`} 
-                  strokeWidth={1.5} 
-                />
-                <span className={`text-[9px] md:text-[10px] font-bold tracking-wider transition-colors duration-300 ${
-                  isScrolled ? 'text-gray-900' : 'text-white'
-                }`}>ELITE</span>
-                <span className={`text-[7px] md:text-[8px] tracking-widest -mt-0.5 transition-colors duration-300 ${
-                  isScrolled ? 'text-gray-600' : 'text-white'
-                }`}>VACATIONS</span>
-              </div>
+            <Link href="/" className="flex items-center">
+              <Image
+                src="/logo/vacationLogo.png"
+                alt="Elite Vacations"
+                width={50}
+                height={50}
+                className={`h-10 w-10 md:h-12 md:w-12 transition-all duration-300 ${
+                  isSolid ? '' : 'brightness-0 invert'
+                }`}
+              />
             </Link>
           </div>
 
@@ -60,7 +62,7 @@ export default function Header() {
                 key={item.name}
                 href={item.href}
                 className={`text-sm font-medium transition-colors duration-300 ${
-                  isScrolled 
+                  isSolid 
                     ? 'text-gray-700 hover:text-lime-dark' 
                     : 'text-white hover:text-lime'
                 }`}
@@ -79,7 +81,7 @@ export default function Header() {
             </Link>
             <button
               className={`lg:hidden p-2 transition-colors duration-300 ${
-                isScrolled ? 'text-gray-900' : 'text-white'
+                isSolid ? 'text-gray-900' : 'text-white'
               }`}
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             >
@@ -90,14 +92,14 @@ export default function Header() {
 
         {mobileMenuOpen && (
           <div className={`lg:hidden py-4 rounded-xl mt-2 px-4 ${
-            isScrolled ? 'bg-white shadow-lg' : 'bg-black/90 backdrop-blur-md'
+            isSolid ? 'bg-white shadow-lg' : 'bg-black/90 backdrop-blur-md'
           }`}>
             {navigation.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
                 className={`block py-3 font-medium transition-colors ${
-                  isScrolled 
+                  isSolid 
                     ? 'text-gray-700 hover:text-lime-dark' 
                     : 'text-white hover:text-lime'
                 }`}

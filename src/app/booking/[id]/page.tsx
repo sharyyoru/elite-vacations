@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import PageHeader from '@/components/PageHeader'
+import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import { properties, conciergeServices } from '@/lib/data'
 import { formatCurrency } from '@/lib/utils'
@@ -46,10 +46,11 @@ export default function BookingPage({ params }: { params: { id: string } }) {
 
   return (
     <main className="min-h-screen bg-white">
-      <PageHeader title="COMPLETE YOUR BOOKING" subtitle={property.title} />
+      <Header variant="solid" />
 
-      <div className="py-8 md:py-12">
+      <div className="pt-24 pb-12">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">Complete Your Booking</h1>
 
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Booking Form */}
