@@ -1,5 +1,8 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PropertyCard from '@/components/PropertyCard'
@@ -9,13 +12,49 @@ import { properties } from '@/lib/data'
 export default function Home() {
   const featuredProperties = properties.filter((p) => p.isElite).slice(0, 6)
   const popularProperties = properties.slice(0, 6)
+  const [showTransitionHeader, setShowTransitionHeader] = useState(false)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const heroHeight = window.innerHeight
+      setShowTransitionHeader(window.scrollY > heroHeight - 100)
+    }
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
 
   return (
     <main className="min-h-screen bg-white">
       <Header />
 
+      {/* Transition Header - Desert Skyline (appears on scroll) */}
+      <div 
+        className={`fixed top-0 left-0 right-0 h-16 md:h-20 z-40 transition-all duration-500 overflow-hidden ${
+          showTransitionHeader 
+            ? 'opacity-100 translate-y-0' 
+            : 'opacity-0 -translate-y-full pointer-events-none'
+        }`}
+      >
+        <div className="absolute inset-0">
+          <Image
+            src="/images/20.png"
+            alt="Dubai Desert Skyline"
+            fill
+            className="object-cover object-[center_30%]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-black/20" />
+        </div>
+        <div className="relative z-10 h-full flex items-center justify-center">
+          <span className="text-white font-bold text-sm md:text-base tracking-widest">
+            DUBAI HOLIDAY HOMES
+          </span>
+          {/* Decorative lime dot */}
+          <div className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 w-3 h-3 md:w-4 md:h-4 bg-lime rounded-full" />
+        </div>
+      </div>
+
       {/* Hero Section - Palm Trees */}
-      <section className="relative min-h-[90vh] md:min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex flex-col justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/21.png"
@@ -24,44 +63,47 @@ export default function Home() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/20" />
+          <div className="absolute inset-0 bg-black/25" />
         </div>
 
         {/* Decorative lime dots */}
-        <div className="absolute top-32 left-8 md:left-16 w-8 h-8 md:w-12 md:h-12 bg-lime rounded-full z-10" />
-        <div className="absolute top-44 left-4 md:left-10 w-4 h-4 md:w-6 md:h-6 bg-lime rounded-full z-10" />
+        <div className="absolute top-28 left-6 md:left-12 lg:left-16 w-8 h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 bg-lime rounded-full z-10" />
+        <div className="absolute top-40 left-3 md:left-6 lg:left-8 w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 bg-lime rounded-full z-10" />
 
-        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-display font-bold text-white mb-8 md:mb-12 tracking-tight">
-            EXPERIENCE <span className="text-white/90">DUBAI</span>
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 md:pt-24">
+          <h1 className="text-[3.5rem] sm:text-7xl md:text-8xl lg:text-9xl font-display font-bold text-white mb-12 md:mb-16 tracking-tight leading-[0.9]">
+            EXPERIENCE<br className="sm:hidden" /> <span className="text-white/90">DUBAI</span>
           </h1>
 
-          <div className="max-w-4xl">
-            <SearchBar />
+          {/* Centered Search Form */}
+          <div className="flex justify-center">
+            <div className="w-full max-w-3xl">
+              <SearchBar />
+            </div>
           </div>
         </div>
 
         {/* Decorative lime dot bottom right */}
-        <div className="absolute bottom-32 right-8 md:right-16 w-10 h-10 md:w-16 md:h-16 bg-lime rounded-full z-10" />
+        <div className="absolute bottom-24 md:bottom-32 right-6 md:right-12 lg:right-16 w-10 h-10 md:w-14 md:h-14 lg:w-16 lg:h-16 bg-lime rounded-full z-10" />
       </section>
 
       {/* Second Hero - Desert with Skyline */}
-      <section className="relative h-[50vh] md:h-[60vh] flex items-center overflow-hidden">
+      <section className="relative h-[40vh] md:h-[50vh] flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/20.png"
             alt="Dubai Desert Skyline"
             fill
-            className="object-cover"
+            className="object-cover object-[center_40%]"
           />
-          <div className="absolute inset-0 bg-black/10" />
+          <div className="absolute inset-0 bg-black/15" />
         </div>
 
         {/* Decorative lime dot */}
-        <div className="absolute top-16 left-8 md:left-16 w-6 h-6 md:w-10 md:h-10 bg-lime rounded-full z-10" />
+        <div className="absolute top-8 md:top-12 left-6 md:left-12 lg:left-16 w-5 h-5 md:w-8 md:h-8 lg:w-10 lg:h-10 bg-lime rounded-full z-10" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-white tracking-tight">
+        <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-center">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-display font-bold text-white tracking-tight text-center">
             DUBAI HOLIDAY HOMES
           </h2>
         </div>
