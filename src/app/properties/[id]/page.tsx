@@ -44,29 +44,28 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
   }
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white">
       <Header />
 
       <div className="pt-24 pb-16">
         {/* Image Gallery */}
-        <div className="relative h-[60vh] bg-elite-card">
+        <div className="relative h-[50vh] md:h-[60vh] bg-gray-100">
           <Image
             src={property.images[currentImage]}
             alt={property.title}
             fill
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-elite-darker via-transparent to-black/30" />
 
           <button
             onClick={prevImage}
-            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 backdrop-blur-sm rounded-full text-white hover:bg-black/70 transition-colors"
+            className="absolute left-4 top-1/2 -translate-y-1/2 p-3 bg-white/90 backdrop-blur-sm rounded-full text-gray-800 hover:bg-white transition-colors shadow-lg"
           >
             <ChevronLeft className="h-6 w-6" />
           </button>
           <button
             onClick={nextImage}
-            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-black/50 backdrop-blur-sm rounded-full text-white hover:bg-black/70 transition-colors"
+            className="absolute right-4 top-1/2 -translate-y-1/2 p-3 bg-white/90 backdrop-blur-sm rounded-full text-gray-800 hover:bg-white transition-colors shadow-lg"
           >
             <ChevronRight className="h-6 w-6" />
           </button>
@@ -77,99 +76,98 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                 key={index}
                 onClick={() => setCurrentImage(index)}
                 className={`w-2 h-2 rounded-full transition-all ${
-                  index === currentImage ? 'w-8 bg-elite-gold' : 'bg-white/50'
+                  index === currentImage ? 'w-8 bg-lime' : 'bg-white/70'
                 }`}
               />
             ))}
           </div>
 
           <div className="absolute top-4 right-4 flex gap-2">
-            <button className="p-3 bg-black/50 backdrop-blur-sm rounded-full text-white hover:bg-black/70 transition-colors">
+            <button className="p-3 bg-white/90 backdrop-blur-sm rounded-full text-gray-800 hover:bg-white transition-colors shadow-lg">
               <Heart className="h-5 w-5" />
             </button>
-            <button className="p-3 bg-black/50 backdrop-blur-sm rounded-full text-white hover:bg-black/70 transition-colors">
+            <button className="p-3 bg-white/90 backdrop-blur-sm rounded-full text-gray-800 hover:bg-white transition-colors shadow-lg">
               <Share2 className="h-5 w-5" />
             </button>
           </div>
 
           {property.isElite && (
-            <div className="absolute top-4 left-4 flex items-center gap-1.5 px-4 py-2 bg-gradient-to-r from-elite-gold to-yellow-600 rounded-full">
-              <Crown className="h-4 w-4 text-black" />
-              <span className="text-sm font-semibold text-black">Elite Property</span>
+            <div className="absolute top-4 left-4 flex items-center gap-1.5 px-4 py-2 bg-white/90 backdrop-blur-sm border border-lime rounded-full">
+              <span className="text-sm font-medium text-gray-800">Guest favorite</span>
             </div>
           )}
         </div>
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 -mt-24 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
             {/* Property Details */}
             <div className="lg:col-span-2 space-y-8">
-              <div className="elite-card">
-                <div className="flex items-start justify-between mb-4">
+              <div className="bg-white rounded-2xl border border-gray-200 p-6">
+                <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 mb-6">
                   <div>
-                    <h1 className="text-3xl font-display font-bold text-white mb-2">
+                    <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-2">
                       {property.title}
                     </h1>
-                    <div className="flex items-center gap-2 text-gray-400">
+                    <div className="flex items-center gap-2 text-gray-600">
                       <MapPin className="h-4 w-4" />
                       <span>{property.location}</span>
                     </div>
                   </div>
-                  <div className="flex items-center gap-1 px-3 py-1.5 bg-elite-gold/10 rounded-lg">
-                    <Star className="h-4 w-4 text-yellow-400 fill-yellow-400" />
-                    <span className="font-semibold text-white">{property.rating}</span>
-                    <span className="text-gray-400">({property.reviews} reviews)</span>
+                  <div className="flex items-center gap-1 px-3 py-1.5 bg-gray-100 rounded-lg shrink-0">
+                    <Star className="h-4 w-4 text-gray-900 fill-gray-900" />
+                    <span className="font-semibold text-gray-900">{property.rating}</span>
+                    <span className="text-gray-500">({property.reviews} reviews)</span>
                   </div>
                 </div>
 
-                <div className="grid grid-cols-4 gap-4 p-4 bg-elite-darker rounded-xl mb-6">
+                <div className="grid grid-cols-4 gap-4 p-4 bg-gray-50 rounded-xl mb-6">
                   <div className="text-center">
-                    <Bed className="h-5 w-5 text-elite-gold mx-auto mb-1" />
-                    <p className="text-white font-medium">{property.bedrooms}</p>
+                    <Bed className="h-5 w-5 text-lime-dark mx-auto mb-1" />
+                    <p className="text-gray-900 font-medium">{property.bedrooms}</p>
                     <p className="text-xs text-gray-500">Bedrooms</p>
                   </div>
                   <div className="text-center">
-                    <Bath className="h-5 w-5 text-elite-gold mx-auto mb-1" />
-                    <p className="text-white font-medium">{property.bathrooms}</p>
+                    <Bath className="h-5 w-5 text-lime-dark mx-auto mb-1" />
+                    <p className="text-gray-900 font-medium">{property.bathrooms}</p>
                     <p className="text-xs text-gray-500">Bathrooms</p>
                   </div>
                   <div className="text-center">
-                    <Users className="h-5 w-5 text-elite-gold mx-auto mb-1" />
-                    <p className="text-white font-medium">{property.guests}</p>
+                    <Users className="h-5 w-5 text-lime-dark mx-auto mb-1" />
+                    <p className="text-gray-900 font-medium">{property.guests}</p>
                     <p className="text-xs text-gray-500">Guests</p>
                   </div>
                   <div className="text-center">
-                    <Maximize className="h-5 w-5 text-elite-gold mx-auto mb-1" />
-                    <p className="text-white font-medium">{property.sqft.toLocaleString()}</p>
+                    <Maximize className="h-5 w-5 text-lime-dark mx-auto mb-1" />
+                    <p className="text-gray-900 font-medium">{property.sqft.toLocaleString()}</p>
                     <p className="text-xs text-gray-500">Sq. Ft.</p>
                   </div>
                 </div>
 
-                <h3 className="text-xl font-semibold text-white mb-3">About This Property</h3>
-                <p className="text-gray-400 leading-relaxed">{property.description}</p>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">About This Property</h3>
+                <p className="text-gray-600 leading-relaxed">{property.description}</p>
               </div>
 
-              <div className="elite-card">
-                <h3 className="text-xl font-semibold text-white mb-6">Amenities</h3>
+              <div className="bg-white rounded-2xl border border-gray-200 p-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-6">Amenities</h3>
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
                   {property.amenities.map((amenity) => {
                     const Icon = amenityIcons[amenity] || amenityIcons['default']
                     return (
-                      <div key={amenity} className="flex items-center gap-3 p-3 bg-elite-darker rounded-lg">
-                        <Icon className="h-5 w-5 text-elite-gold" />
-                        <span className="text-gray-300">{amenity}</span>
+                      <div key={amenity} className="flex items-center gap-3 p-3 bg-gray-50 rounded-lg">
+                        <Icon className="h-5 w-5 text-lime-dark" />
+                        <span className="text-gray-700 text-sm">{amenity}</span>
                       </div>
                     )
                   })}
                 </div>
               </div>
 
-              <div className="elite-card">
-                <h3 className="text-xl font-semibold text-white mb-6">Location</h3>
-                <div className="h-64 bg-elite-darker rounded-xl flex items-center justify-center">
+              <div className="bg-white rounded-2xl border border-gray-200 p-6">
+                <h3 className="text-xl font-semibold text-gray-900 mb-6">Location</h3>
+                <div className="h-64 bg-gray-100 rounded-xl flex items-center justify-center">
                   <div className="text-center">
-                    <MapPin className="h-12 w-12 text-elite-gold mx-auto mb-3" />
-                    <p className="text-gray-400">Interactive map integration</p>
+                    <MapPin className="h-12 w-12 text-lime-dark mx-auto mb-3" />
+                    <p className="text-gray-600">Interactive map integration</p>
                     <p className="text-sm text-gray-500">{property.location}</p>
                   </div>
                 </div>
@@ -178,30 +176,30 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
 
             {/* Booking Card */}
             <div className="lg:col-span-1">
-              <div className="elite-card sticky top-28">
+              <div className="bg-white rounded-2xl border border-gray-200 p-6 sticky top-28 shadow-lg">
                 <div className="flex items-baseline gap-2 mb-6">
-                  <span className="text-3xl font-bold elite-gradient-text">
+                  <span className="text-3xl font-bold text-gray-900">
                     {formatCurrency(property.price)}
                   </span>
-                  <span className="text-gray-400">/ night</span>
+                  <span className="text-gray-500">/ night</span>
                 </div>
 
                 <div className="space-y-4 mb-6">
                   <div className="grid grid-cols-2 gap-4">
                     <div>
-                      <label className="block text-sm font-medium text-gray-400 mb-2">Check In</label>
+                      <label className="block text-sm font-medium text-gray-600 mb-2">Check In</label>
                       <input
                         type="date"
-                        className="elite-input"
+                        className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-lg text-gray-800 text-sm focus:outline-none focus:border-lime"
                         value={checkIn}
                         onChange={(e) => setCheckIn(e.target.value)}
                       />
                     </div>
                     <div>
-                      <label className="block text-sm font-medium text-gray-400 mb-2">Check Out</label>
+                      <label className="block text-sm font-medium text-gray-600 mb-2">Check Out</label>
                       <input
                         type="date"
-                        className="elite-input"
+                        className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-lg text-gray-800 text-sm focus:outline-none focus:border-lime"
                         value={checkOut}
                         onChange={(e) => setCheckOut(e.target.value)}
                       />
@@ -209,9 +207,9 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
                   </div>
 
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-2">Guests</label>
+                    <label className="block text-sm font-medium text-gray-600 mb-2">Guests</label>
                     <select
-                      className="elite-input"
+                      className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-lg text-gray-800 text-sm focus:outline-none focus:border-lime"
                       value={guests}
                       onChange={(e) => setGuests(parseInt(e.target.value))}
                     >
@@ -228,22 +226,22 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
 
                 <p className="text-center text-gray-500 text-sm mb-6">You won&apos;t be charged yet</p>
 
-                <div className="border-t border-elite-border pt-4 space-y-3">
-                  <div className="flex justify-between text-gray-400">
+                <div className="border-t border-gray-200 pt-4 space-y-3">
+                  <div className="flex justify-between text-gray-600 text-sm">
                     <span>{formatCurrency(property.price)} × 7 nights</span>
                     <span>{formatCurrency(property.price * 7)}</span>
                   </div>
-                  <div className="flex justify-between text-gray-400">
+                  <div className="flex justify-between text-gray-600 text-sm">
                     <span>Cleaning fee</span>
                     <span>{formatCurrency(500)}</span>
                   </div>
-                  <div className="flex justify-between text-gray-400">
+                  <div className="flex justify-between text-gray-600 text-sm">
                     <span>Service fee</span>
                     <span>{formatCurrency(property.price * 0.12)}</span>
                   </div>
-                  <div className="flex justify-between font-semibold text-white pt-3 border-t border-elite-border">
+                  <div className="flex justify-between font-semibold text-gray-900 pt-3 border-t border-gray-200">
                     <span>Total</span>
-                    <span className="elite-gradient-text">
+                    <span>
                       {formatCurrency(property.price * 7 + 500 + property.price * 0.12)}
                     </span>
                   </div>

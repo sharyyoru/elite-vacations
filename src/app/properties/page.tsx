@@ -13,16 +13,16 @@ export default function PropertiesPage() {
   const [filteredProperties, setFilteredProperties] = useState(properties)
 
   return (
-    <main className="min-h-screen">
+    <main className="min-h-screen bg-white">
       <Header />
 
-      <div className="pt-32 pb-16">
+      <div className="pt-32 pb-16 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
-            <h1 className="text-4xl font-display font-bold text-white mb-4">
+            <h1 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
               Luxury Properties in Dubai
             </h1>
-            <p className="text-gray-400">
+            <p className="text-gray-600">
               Discover {filteredProperties.length} premium vacation rentals across Dubai&apos;s most exclusive locations
             </p>
           </div>
@@ -32,14 +32,14 @@ export default function PropertiesPage() {
           </div>
 
           <div className="flex items-center justify-between mb-6">
-            <p className="text-gray-400">
-              Showing <span className="text-white font-medium">{filteredProperties.length}</span> properties
+            <p className="text-gray-600">
+              Showing <span className="text-gray-900 font-medium">{filteredProperties.length}</span> properties
             </p>
             <div className="flex items-center gap-2">
               <button
                 onClick={() => setViewMode('grid')}
                 className={`p-2 rounded-lg transition-colors ${
-                  viewMode === 'grid' ? 'bg-elite-gold text-black' : 'bg-elite-card text-gray-400 hover:text-white'
+                  viewMode === 'grid' ? 'bg-lime text-black' : 'bg-white border border-gray-200 text-gray-500 hover:text-gray-900'
                 }`}
               >
                 <Grid3X3 className="h-5 w-5" />
@@ -47,7 +47,7 @@ export default function PropertiesPage() {
               <button
                 onClick={() => setViewMode('list')}
                 className={`p-2 rounded-lg transition-colors ${
-                  viewMode === 'list' ? 'bg-elite-gold text-black' : 'bg-elite-card text-gray-400 hover:text-white'
+                  viewMode === 'list' ? 'bg-lime text-black' : 'bg-white border border-gray-200 text-gray-500 hover:text-gray-900'
                 }`}
               >
                 <List className="h-5 w-5" />
@@ -55,9 +55,9 @@ export default function PropertiesPage() {
             </div>
           </div>
 
-          <div className={`grid gap-8 ${
+          <div className={`grid gap-6 ${
             viewMode === 'grid' 
-              ? 'grid-cols-1 md:grid-cols-2 lg:grid-cols-3' 
+              ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4' 
               : 'grid-cols-1'
           }`}>
             {filteredProperties.map((property) => (
@@ -67,7 +67,7 @@ export default function PropertiesPage() {
 
           {filteredProperties.length === 0 && (
             <div className="text-center py-16">
-              <p className="text-gray-400 text-lg">No properties found matching your criteria.</p>
+              <p className="text-gray-500 text-lg">No properties found matching your criteria.</p>
             </div>
           )}
         </div>

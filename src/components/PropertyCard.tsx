@@ -1,6 +1,9 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
-import { Star, MapPin, Bed, Bath, Users, Crown } from 'lucide-react'
+import { useState } from 'react'
+import { Star, Heart } from 'lucide-react'
 import { formatCurrency } from '@/lib/utils'
 
 interface PropertyCardProps {
@@ -20,64 +23,56 @@ interface PropertyCardProps {
 }
 
 export default function PropertyCard({ property }: PropertyCardProps) {
+  const [isFavorite, setIsFavorite] = useState(false)
+
+  const handleFavoriteClick = (e: React.MouseEvent) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setIsFavorite(!isFavorite)
+  }
+
   return (
     <Link href={`/properties/${property.id}`}>
-      <div className="elite-card group cursor-pointer overflow-hidden">
-        <div className="relative h-64 -mx-6 -mt-6 mb-4 overflow-hidden">
+      <div className="group cursor-pointer">
+        <div className="relative aspect-[4/3] rounded-xl overflow-hidden mb-3">
           <Image
             src={property.image}
             alt={property.title}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-110"
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
           {property.isElite && (
-            <div className="absolute top-4 left-4 flex items-center gap-1.5 px-3 py-1.5 bg-gradient-to-r from-elite-gold to-yellow-600 rounded-full">
-              <Crown className="h-3.5 w-3.5 text-black" />
-              <span className="text-xs font-semibold text-black">Elite</span>
+            <div className="absolute top-3 left-3 inline-flex items-center px-2.5 py-1 text-xs font-medium border border-lime bg-white/90 backdrop-blur-sm rounded-full text-gray-700">
+              Guest favorite
             </div>
           )}
-          <div className="absolute top-4 right-4 flex items-center gap-1 px-2 py-1 bg-black/60 backdrop-blur-sm rounded-lg">
-            <Star className="h-3.5 w-3.5 text-yellow-400 fill-yellow-400" />
-            <span className="text-sm font-medium text-white">{property.rating}</span>
-            <span className="text-xs text-gray-300">({property.reviews})</span>
-          </div>
-          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
-        </div>
-
-        <h3 className="text-lg font-semibold text-white mb-2 group-hover:text-elite-gold transition-colors line-clamp-1">
-          {property.title}
-        </h3>
-
-        <div className="flex items-center gap-1.5 text-gray-400 mb-4">
-          <MapPin className="h-4 w-4" />
-          <span className="text-sm">{property.location}</span>
-        </div>
-
-        <div className="flex items-center gap-4 mb-4 text-gray-400">
-          <div className="flex items-center gap-1.5">
-            <Bed className="h-4 w-4" />
-            <span className="text-sm">{property.bedrooms}</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <Bath className="h-4 w-4" />
-            <span className="text-sm">{property.bathrooms}</span>
-          </div>
-          <div className="flex items-center gap-1.5">
-            <Users className="h-4 w-4" />
-            <span className="text-sm">{property.guests}</span>
-          </div>
-        </div>
-
-        <div className="flex items-center justify-between pt-4 border-t border-elite-border">
-          <div>
-            <span className="text-xl font-bold elite-gradient-text">
-              {formatCurrency(property.price)}
-            </span>
-            <span className="text-sm text-gray-500"> / night</span>
-          </div>
-          <button className="elite-button-secondary text-sm py-2 px-4">
-            View Details
+          <button
+            onClick={handleFavoriteClick}
+            className="absolute top-3 right-3 p-2 bg-white/80 backdrop-blur-sm rounded-full hover:bg-white transition-colors"
+          >
+            <Heart 
+              className={`h-4 w-4 transition-colors ${isFavorite ? 'fill-red-500 text-red-500' : 'text-gray-600'}`} 
+            />
           </button>
+        </div>
+
+        <div className="space-y-1">
+          <div className="flex items-start justify-between gap-2">
+            <h3 className="font-semibold text-gray-900 group-hover:text-lime-dark transition-colors line-clamp-1 text-sm">
+              {property.title}
+            </h3>
+            <div className="flex items-center gap-1 shrink-0">
+              <Star className="h-3.5 w-3.5 text-gray-900 fill-gray-900" />
+              <span className="text-sm font-medium text-gray-900">{property.rating}</span>
+            </div>
+          </div>
+
+          <p className="text-sm text-gray-500 line-clamp-1">{property.location}</p>
+
+          <p className="text-sm text-gray-500">
+            <span className="font-semibold text-gray-900">{formatCurrency(property.price)}</span>
+            <span className="text-gray-400"> for 2 nights</span>
+          </p>
         </div>
       </div>
     </Link>

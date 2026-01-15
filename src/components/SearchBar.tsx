@@ -39,13 +39,13 @@ export default function SearchBar({ onSearch, compact = false }: SearchBarProps)
 
   if (compact) {
     return (
-      <div className="flex items-center gap-2 p-2 bg-elite-card border border-elite-border rounded-xl">
+      <div className="flex items-center gap-2 p-2 bg-white border border-gray-200 rounded-xl shadow-sm">
         <div className="flex items-center gap-2 px-3 py-2 flex-1">
           <Search className="h-5 w-5 text-gray-400" />
           <input
             type="text"
             placeholder="Search destinations..."
-            className="bg-transparent text-white placeholder:text-gray-500 focus:outline-none flex-1"
+            className="bg-transparent text-gray-800 placeholder:text-gray-400 focus:outline-none flex-1"
             value={filters.location}
             onChange={(e) => setFilters({ ...filters, location: e.target.value })}
           />
@@ -58,15 +58,15 @@ export default function SearchBar({ onSearch, compact = false }: SearchBarProps)
   }
 
   return (
-    <div className="bg-elite-card border border-elite-border rounded-2xl p-4 md:p-6">
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-400 flex items-center gap-2">
-            <MapPin className="h-4 w-4" />
+    <div className="bg-white/95 backdrop-blur-sm rounded-2xl p-4 md:p-6 shadow-xl">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="space-y-1.5">
+          <label className="text-xs font-medium text-gray-500 flex items-center gap-1.5">
+            <MapPin className="h-3.5 w-3.5" />
             Location
           </label>
           <select
-            className="elite-input"
+            className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-lg text-gray-800 text-sm focus:outline-none focus:border-lime focus:ring-1 focus:ring-lime/30"
             value={filters.location}
             onChange={(e) => setFilters({ ...filters, location: e.target.value })}
           >
@@ -77,39 +77,39 @@ export default function SearchBar({ onSearch, compact = false }: SearchBarProps)
           </select>
         </div>
 
-        <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-400 flex items-center gap-2">
-            <Calendar className="h-4 w-4" />
+        <div className="space-y-1.5">
+          <label className="text-xs font-medium text-gray-500 flex items-center gap-1.5">
+            <Calendar className="h-3.5 w-3.5" />
             Check In
           </label>
           <input
             type="date"
-            className="elite-input"
+            className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-lg text-gray-800 text-sm focus:outline-none focus:border-lime focus:ring-1 focus:ring-lime/30"
             value={filters.checkIn}
             onChange={(e) => setFilters({ ...filters, checkIn: e.target.value })}
           />
         </div>
 
-        <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-400 flex items-center gap-2">
-            <Calendar className="h-4 w-4" />
+        <div className="space-y-1.5">
+          <label className="text-xs font-medium text-gray-500 flex items-center gap-1.5">
+            <Calendar className="h-3.5 w-3.5" />
             Check Out
           </label>
           <input
             type="date"
-            className="elite-input"
+            className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-lg text-gray-800 text-sm focus:outline-none focus:border-lime focus:ring-1 focus:ring-lime/30"
             value={filters.checkOut}
             onChange={(e) => setFilters({ ...filters, checkOut: e.target.value })}
           />
         </div>
 
-        <div className="space-y-2">
-          <label className="text-sm font-medium text-gray-400 flex items-center gap-2">
-            <Users className="h-4 w-4" />
+        <div className="space-y-1.5">
+          <label className="text-xs font-medium text-gray-500 flex items-center gap-1.5">
+            <Users className="h-3.5 w-3.5" />
             Guests
           </label>
           <select
-            className="elite-input"
+            className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-lg text-gray-800 text-sm focus:outline-none focus:border-lime focus:ring-1 focus:ring-lime/30"
             value={filters.guests}
             onChange={(e) => setFilters({ ...filters, guests: parseInt(e.target.value) })}
           >
@@ -120,26 +120,26 @@ export default function SearchBar({ onSearch, compact = false }: SearchBarProps)
         </div>
       </div>
 
-      <div className="flex items-center justify-between mt-6 pt-4 border-t border-elite-border">
+      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mt-5 pt-4 border-t border-gray-100">
         <button
           onClick={() => setShowFilters(!showFilters)}
-          className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+          className="flex items-center gap-2 text-gray-500 hover:text-gray-700 transition-colors"
         >
           <SlidersHorizontal className="h-4 w-4" />
           <span className="text-sm font-medium">More Filters</span>
         </button>
-        <button onClick={handleSearch} className="elite-button">
-          <Search className="h-4 w-4 inline mr-2" />
+        <button onClick={handleSearch} className="w-full sm:w-auto px-6 py-2.5 bg-lime text-black font-semibold rounded-full transition-all duration-300 hover:bg-lime-light hover:shadow-lg flex items-center justify-center gap-2">
+          <Search className="h-4 w-4" />
           Search Properties
         </button>
       </div>
 
       {showFilters && (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-6 pt-4 border-t border-elite-border">
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-gray-400">Property Type</label>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-5 pt-4 border-t border-gray-100">
+          <div className="space-y-1.5">
+            <label className="text-xs font-medium text-gray-500">Property Type</label>
             <select
-              className="elite-input"
+              className="w-full px-3 py-2.5 bg-white border border-gray-200 rounded-lg text-gray-800 text-sm focus:outline-none focus:border-lime"
               value={filters.propertyType}
               onChange={(e) => setFilters({ ...filters, propertyType: e.target.value })}
             >
@@ -150,8 +150,8 @@ export default function SearchBar({ onSearch, compact = false }: SearchBarProps)
             </select>
           </div>
 
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-gray-400">
+          <div className="space-y-1.5">
+            <label className="text-xs font-medium text-gray-500">
               Price Range: {filters.priceMin} - {filters.priceMax} AED
             </label>
             <input
@@ -159,22 +159,22 @@ export default function SearchBar({ onSearch, compact = false }: SearchBarProps)
               min="0"
               max="50000"
               step="500"
-              className="w-full"
+              className="w-full accent-lime"
               value={filters.priceMax}
               onChange={(e) => setFilters({ ...filters, priceMax: parseInt(e.target.value) })}
             />
           </div>
 
-          <div className="space-y-2">
-            <label className="text-sm font-medium text-gray-400">Elite Properties Only</label>
+          <div className="space-y-1.5">
+            <label className="text-xs font-medium text-gray-500">Elite Properties Only</label>
             <label className="flex items-center gap-3 cursor-pointer">
               <input
                 type="checkbox"
-                className="w-5 h-5 rounded border-elite-border bg-elite-card"
+                className="w-5 h-5 rounded border-gray-300 text-lime focus:ring-lime"
                 checked={filters.isElite}
                 onChange={(e) => setFilters({ ...filters, isElite: e.target.checked })}
               />
-              <span className="text-white">Show Elite Collection</span>
+              <span className="text-gray-700 text-sm">Show Elite Collection</span>
             </label>
           </div>
         </div>
