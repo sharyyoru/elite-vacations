@@ -1,4 +1,4 @@
-import Header from '@/components/Header'
+import PageHeader from '@/components/PageHeader'
 import Footer from '@/components/Footer'
 import { conciergeServices } from '@/lib/data'
 import { formatCurrency } from '@/lib/utils'
@@ -16,22 +16,18 @@ const iconMap: { [key: string]: any } = {
 
 export default function ConciergePage() {
   return (
-    <main className="min-h-screen">
-      <Header />
+    <main className="min-h-screen bg-white">
+      <PageHeader title="CONCIERGE SERVICES" subtitle="Elevate your Dubai experience" />
 
-      <div className="pt-32 pb-16">
+      <div className="py-12 md:py-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Hero Section */}
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-elite-gold/20 border border-elite-gold/30 rounded-full mb-6">
-              <Crown className="h-4 w-4 text-elite-gold" />
-              <span className="text-sm font-medium text-elite-gold">Virtual Concierge</span>
+          {/* Intro Section */}
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-lime/20 border border-lime/30 rounded-full mb-6">
+              <Crown className="h-4 w-4 text-lime-dark" />
+              <span className="text-sm font-medium text-lime-dark">Virtual Concierge</span>
             </div>
-            <h1 className="text-4xl md:text-5xl font-display font-bold text-white mb-6">
-              Elevate Your{' '}
-              <span className="elite-gradient-text">Experience</span>
-            </h1>
-            <p className="text-xl text-gray-400 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
               Our dedicated concierge team is available 24/7 to curate unforgettable experiences
               and handle every detail of your luxury stay.
             </p>
@@ -42,17 +38,17 @@ export default function ConciergePage() {
             {conciergeServices.map((service) => {
               const Icon = iconMap[service.icon] || Sparkles
               return (
-                <div key={service.id} className="elite-card group hover:border-elite-gold/50 transition-all">
-                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-elite-gold/10 border border-elite-gold/20 mb-6 group-hover:bg-elite-gold/20 transition-colors">
-                    <Icon className="h-7 w-7 text-elite-gold" />
+                <div key={service.id} className="bg-white rounded-2xl border border-gray-200 p-6 group hover:border-lime/50 hover:shadow-lg transition-all">
+                  <div className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-lime/10 border border-lime/20 mb-6 group-hover:bg-lime/20 transition-colors">
+                    <Icon className="h-7 w-7 text-lime-dark" />
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{service.name}</h3>
-                  <p className="text-gray-400 mb-4">{service.description}</p>
+                  <h3 className="text-xl font-semibold text-gray-900 mb-2">{service.name}</h3>
+                  <p className="text-gray-600 mb-4">{service.description}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold elite-gradient-text">
+                    <span className="text-2xl font-bold text-gray-900">
                       {formatCurrency(service.price)}
                     </span>
-                    <button className="elite-button-secondary text-sm py-2 px-4 flex items-center gap-2">
+                    <button className="px-4 py-2 bg-lime text-black font-medium rounded-full text-sm hover:bg-lime-light transition-colors flex items-center gap-2">
                       Book <ArrowRight className="h-4 w-4" />
                     </button>
                   </div>
@@ -62,13 +58,13 @@ export default function ConciergePage() {
           </div>
 
           {/* Premium Services */}
-          <div className="elite-card bg-gradient-to-r from-elite-gold/10 to-transparent border-elite-gold/30">
+          <div className="bg-gray-50 rounded-2xl border border-gray-200 p-8">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
-                <h2 className="text-3xl font-display font-bold text-white mb-4">
+                <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900 mb-4">
                   Custom Experiences
                 </h2>
-                <p className="text-gray-400 mb-6">
+                <p className="text-gray-600 mb-6">
                   Looking for something unique? Our concierge team can arrange exclusive experiences
                   tailored to your preferences — from private desert safaris to VIP access at Dubai&apos;s
                   most exclusive venues.
@@ -82,8 +78,8 @@ export default function ConciergePage() {
                     'Personal fitness trainers',
                     'Childcare services',
                   ].map((item) => (
-                    <li key={item} className="flex items-center gap-3 text-gray-300">
-                      <div className="w-1.5 h-1.5 rounded-full bg-elite-gold" />
+                    <li key={item} className="flex items-center gap-3 text-gray-700">
+                      <div className="w-1.5 h-1.5 rounded-full bg-lime" />
                       {item}
                     </li>
                   ))}
@@ -92,10 +88,9 @@ export default function ConciergePage() {
                   Contact Concierge <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
-              <div className="relative h-80 rounded-2xl overflow-hidden">
-                <div className="absolute inset-0 bg-gradient-to-br from-elite-gold/20 to-purple-600/20" />
+              <div className="relative h-80 rounded-2xl overflow-hidden bg-gradient-to-br from-lime/20 to-gray-100">
                 <div className="absolute inset-0 flex items-center justify-center">
-                  <Crown className="h-24 w-24 text-elite-gold/30" />
+                  <Crown className="h-24 w-24 text-lime/40" />
                 </div>
               </div>
             </div>

@@ -3,14 +3,14 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
-import Header from '@/components/Header'
+import PageHeader from '@/components/PageHeader'
 import Footer from '@/components/Footer'
 import { properties, conciergeServices } from '@/lib/data'
 import { formatCurrency } from '@/lib/utils'
 import {
-  MapPin, Star, Bed, Bath, Users, Maximize, Crown, Check,
-  Calendar, ChevronLeft, ChevronRight, Heart, Share2,
-  Wifi, Car, Waves, Dumbbell, Wind, Tv, UtensilsCrossed, Shield
+  MapPin, Star, Bed, Bath, Users, Maximize, Check,
+  ChevronLeft, ChevronRight, Heart, Share2,
+  Waves, Dumbbell, Tv, Car, Shield
 } from 'lucide-react'
 
 const amenityIcons: { [key: string]: any } = {
@@ -45,9 +45,9 @@ export default function PropertyDetailPage({ params }: { params: { id: string } 
 
   return (
     <main className="min-h-screen bg-white">
-      <Header />
+      <PageHeader title={property.title} subtitle={property.location} />
 
-      <div className="pt-24 pb-16">
+      <div className="pb-16">
         {/* Image Gallery */}
         <div className="relative h-[50vh] md:h-[60vh] bg-gray-100">
           <Image

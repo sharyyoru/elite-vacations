@@ -1,12 +1,12 @@
 'use client'
 
 import { useState } from 'react'
-import Header from '@/components/Header'
+import PageHeader from '@/components/PageHeader'
 import Footer from '@/components/Footer'
 import PropertyCard from '@/components/PropertyCard'
 import SearchBar from '@/components/SearchBar'
 import { properties } from '@/lib/data'
-import { Grid3X3, List, SlidersHorizontal } from 'lucide-react'
+import { Grid3X3, List } from 'lucide-react'
 
 export default function PropertiesPage() {
   const [viewMode, setViewMode] = useState<'grid' | 'list'>('grid')
@@ -14,19 +14,13 @@ export default function PropertiesPage() {
 
   return (
     <main className="min-h-screen bg-white">
-      <Header />
+      <PageHeader 
+        title="DUBAI HOLIDAY HOMES" 
+        subtitle={`Discover ${filteredProperties.length} premium vacation rentals`}
+      />
 
-      <div className="pt-32 pb-16 bg-gray-50">
+      <div className="py-8 md:py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-8">
-            <h1 className="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">
-              Luxury Properties in Dubai
-            </h1>
-            <p className="text-gray-600">
-              Discover {filteredProperties.length} premium vacation rentals across Dubai&apos;s most exclusive locations
-            </p>
-          </div>
-
           <div className="mb-8">
             <SearchBar />
           </div>
