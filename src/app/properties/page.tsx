@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import PropertyCard from '@/components/PropertyCard'
@@ -14,9 +15,31 @@ export default function PropertiesPage() {
 
   return (
     <main className="min-h-screen bg-white">
-      <Header variant="solid" />
+      <Header variant="transparent" />
 
-      <div className="pt-24 pb-12 bg-gray-50">
+      {/* Hero Section with Background Image */}
+      <div className="relative h-[400px] w-full">
+        <Image
+          src="/images/20.png"
+          alt="Dubai Properties"
+          fill
+          className="object-cover"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="text-center text-white">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-4">
+              Luxury Properties
+            </h1>
+            <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto px-4">
+              Discover your perfect Dubai vacation rental
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="py-12 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-8">
             <SearchBar />

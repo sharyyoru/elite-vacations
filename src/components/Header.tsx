@@ -8,9 +8,9 @@ import { Menu, X } from 'lucide-react'
 const navigation = [
   { name: 'Home', href: '/' },
   { name: 'Properties', href: '/properties' },
-  { name: 'Estimate Revenue', href: '/owner' },
-  { name: 'Areas', href: '/properties' },
-  { name: 'News', href: '/contact' },
+  { name: 'Estimate Revenue', href: '/calculator' },
+  { name: 'Areas', href: '/areas' },
+  { name: 'News', href: '/news' },
   { name: 'Contact', href: '/contact' },
 ]
 
@@ -73,6 +73,16 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
           </div>
 
           <div className="flex items-center gap-3">
+            <Link
+              href="/owner"
+              className={`hidden sm:inline-flex px-5 py-2 md:px-6 md:py-2.5 font-semibold rounded-full transition-all duration-300 text-sm ${
+                isSolid 
+                  ? 'border-2 border-gray-300 text-gray-700 hover:border-lime hover:text-lime-dark' 
+                  : 'border-2 border-white text-white hover:bg-white hover:text-black'
+              }`}
+            >
+              Login
+            </Link>
             <Link
               href="/properties"
               className="hidden sm:inline-flex px-5 py-2 md:px-6 md:py-2.5 bg-lime text-black font-semibold rounded-full transition-all duration-300 hover:bg-lime-light hover:shadow-lg text-sm"
