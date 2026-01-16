@@ -1,5 +1,6 @@
 import Link from 'next/link'
-import { MapPin, Phone, Mail, Instagram, Facebook, Twitter, Linkedin, Building2 } from 'lucide-react'
+import Image from 'next/image'
+import { MapPin, Phone, Mail, Instagram, Facebook, Twitter, Linkedin } from 'lucide-react'
 
 const footerLinks = {
   explore: [
@@ -36,12 +37,14 @@ export default function Footer() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-12 md:py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 md:gap-12">
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-6">
-              <div className="flex flex-col items-center">
-                <Building2 className="h-10 w-10 text-white" strokeWidth={1.5} />
-                <span className="text-white text-[10px] font-bold tracking-wider">ELITE</span>
-                <span className="text-white text-[8px] tracking-widest -mt-0.5">VACATIONS</span>
-              </div>
+            <Link href="/" className="flex items-center mb-6">
+              <Image
+                src="/logo/vacationLogo.png"
+                alt="Elite Vacations"
+                width={80}
+                height={80}
+                className="h-16 w-16 md:h-20 md:w-20 brightness-0 invert"
+              />
             </Link>
             <p className="text-gray-400 mb-6 max-w-sm text-sm">
               Experience unparalleled luxury in Dubai&apos;s most exclusive neighborhoods. 

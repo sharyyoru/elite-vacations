@@ -22,7 +22,7 @@ export default function ContactPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mb-12">
             {/* Contact Information Cards */}
             <div className="bg-white rounded-2xl border border-gray-200 p-6 hover:shadow-lg transition-all">
               <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-lime/10 border border-lime/20 mb-4">
@@ -58,7 +58,7 @@ export default function ContactPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
             {/* Contact Form */}
             <div className="bg-white rounded-2xl border border-gray-200 p-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-6">Send us a Message</h2>

@@ -18,21 +18,21 @@ export default function PropertiesPage() {
       <Header variant="transparent" />
 
       {/* Hero Section with Background Image */}
-      <div className="relative h-[400px] w-full">
+      <div className="relative h-[300px] sm:h-[350px] md:h-[400px] lg:h-[450px] w-full overflow-hidden">
         <Image
           src="/images/20.png"
           alt="Dubai Properties"
           fill
-          className="object-cover"
+          className="object-cover object-[center_60%]"
           priority
         />
         <div className="absolute inset-0 bg-black/40" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className="text-center text-white">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-4">
+        <div className="absolute inset-0 flex items-center justify-center px-4">
+          <div className="text-center text-white max-w-4xl">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-3 md:mb-4">
               Luxury Properties
             </h1>
-            <p className="text-lg md:text-xl text-gray-200 max-w-2xl mx-auto px-4">
+            <p className="text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl mx-auto">
               Discover your perfect Dubai vacation rental
             </p>
           </div>
@@ -45,8 +45,8 @@ export default function PropertiesPage() {
             <SearchBar />
           </div>
 
-          <div className="flex items-center justify-between mb-6">
-            <p className="text-gray-600">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
+            <p className="text-sm sm:text-base text-gray-600">
               Showing <span className="text-gray-900 font-medium">{filteredProperties.length}</span> properties
             </p>
             <div className="flex items-center gap-2">
@@ -56,7 +56,7 @@ export default function PropertiesPage() {
                   viewMode === 'grid' ? 'bg-lime text-black' : 'bg-white border border-gray-200 text-gray-500 hover:text-gray-900'
                 }`}
               >
-                <Grid3X3 className="h-5 w-5" />
+                <Grid3X3 className="h-4 w-4 sm:h-5 sm:w-5" />
               </button>
               <button
                 onClick={() => setViewMode('list')}
@@ -64,14 +64,14 @@ export default function PropertiesPage() {
                   viewMode === 'list' ? 'bg-lime text-black' : 'bg-white border border-gray-200 text-gray-500 hover:text-gray-900'
                 }`}
               >
-                <List className="h-5 w-5" />
+                <List className="h-4 w-4 sm:h-5 sm:w-5" />
               </button>
             </div>
           </div>
 
-          <div className={`grid gap-6 ${
+          <div className={`grid gap-4 sm:gap-6 ${
             viewMode === 'grid' 
-              ? 'grid-cols-2 md:grid-cols-3 lg:grid-cols-4' 
+              ? 'grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4' 
               : 'grid-cols-1'
           }`}>
             {filteredProperties.map((property) => (

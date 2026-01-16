@@ -41,15 +41,15 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
       }`}
     >
       <nav className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 md:h-20 items-center justify-between">
+        <div className="flex h-20 md:h-24 items-center justify-between">
           <div className="flex items-center gap-2">
             <Link href="/" className="flex items-center">
               <Image
-                src="/logo/vacationLogo.png"
+                src={isSolid ? "/logo/elite-vacations.png" : "/logo/vacationLogo.png"}
                 alt="Elite Vacations"
-                width={50}
-                height={50}
-                className={`h-10 w-10 md:h-12 md:w-12 transition-all duration-300 ${
+                width={100}
+                height={100}
+                className={`h-20 w-20 md:h-24 md:w-24 transition-all duration-300 ${
                   isSolid ? '' : 'brightness-0 invert'
                 }`}
               />
@@ -118,6 +118,17 @@ export default function Header({ variant = 'transparent' }: HeaderProps) {
                 {item.name}
               </Link>
             ))}
+            <Link
+              href="/owner"
+              className={`block py-3 font-medium transition-colors ${
+                isSolid 
+                  ? 'text-gray-700 hover:text-lime-dark' 
+                  : 'text-white hover:text-lime'
+              }`}
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              Login
+            </Link>
             <Link
               href="/properties"
               className="block py-3 text-lime-dark font-semibold"

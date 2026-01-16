@@ -51,7 +51,7 @@ export default function CalculatorPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
             {/* Input Form */}
             <div className="bg-white rounded-2xl border border-gray-200 p-8">
               <h2 className="text-2xl font-semibold text-gray-900 mb-6">Property Details</h2>

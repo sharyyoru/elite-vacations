@@ -85,8 +85,8 @@ export default function NewsPage() {
 
           {/* Featured Articles */}
           <div className="mb-12">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6">Featured Stories</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-6">Featured Stories</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
               {featuredArticles.map((article) => (
                 <div key={article.id} className="bg-white rounded-2xl border border-gray-200 overflow-hidden group hover:shadow-xl transition-all duration-300">
                   <div className="relative h-64 bg-gradient-to-br from-lime/20 to-gray-100 overflow-hidden">
@@ -129,8 +129,8 @@ export default function NewsPage() {
 
           {/* Regular Articles */}
           <div>
-            <h2 className="text-2xl font-semibold text-gray-900 mb-6">Recent Articles</h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            <h2 className="text-xl sm:text-2xl font-semibold text-gray-900 mb-6">Recent Articles</h2>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {regularArticles.map((article) => (
                 <div key={article.id} className="bg-white rounded-2xl border border-gray-200 p-6 group hover:shadow-lg transition-all duration-300">
                   <div className="mb-4">
