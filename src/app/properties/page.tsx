@@ -23,7 +23,7 @@ export default function PropertiesPage() {
           src="/images/20.png"
           alt="Dubai Properties"
           fill
-          className="object-cover object-[center_60%]"
+          className="object-cover object-[center_10%]"
           priority
         />
         <div className="absolute inset-0 bg-black/40" />
